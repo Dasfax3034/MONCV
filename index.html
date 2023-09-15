@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mon CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="cv-container">
+        <section id="first">
+            <div id="left">
+                <h1>Salut ! Je m'appelle Luca Baresi</h1>
+                <h2>Et je suis un <div class="description-container"><span id="description" class="description"></span><span class="cursor"></span></div></h2>
+            </div>
+            <div class="right">
+                <img src="CV_Luca_Baresi2.png" alt="Votre photo" id="Je_sappelle_yassine">
+                <div class="border"></div>
+            </div>
+        </section>
+        <section id="second">
+            <h2>À propos de Moi :</h2>
+            <p>
+                Je m'appelle Luca Baresi, et je suis un artiste passionné par le monde du spectacle. Né le 11 septembre 1990, j'ai toujours été attiré par la magie de la scène et l'art de l'interprétation.
+
+                Mon parcours professionnel m'a permis de vivre des moments inoubliables. En tant qu'acteur, j'ai eu le privilège de me glisser dans le rôle principal de "Le Comédien Malchanceux" au Théâtre de l'Inattendu. Lors d'une représentation mémorable, un oiseau est venu s'inviter sur scène et a atterri sur ma tête en plein milieu d'une scène émotionnelle. Plutôt que de briser le personnage, j'ai improvisé en intégrant l'oiseau dans la scène, créant ainsi un moment de comédie spontanée et inoubliable.
+                
+                Le cinéma a également été une partie importante de mon parcours artistique. En tant que figurant dans "Baby Driver," j'ai contribué à créer des scènes d'action palpitantes. Mon expérience dans le doublage, notamment pour la série emblématique "Les Simpsons," témoigne de ma polyvalence en tant qu'artiste.
+                
+                Ma formation solide comprend des années d'ateliers théâtraux au conservatoire, des cours de diction, ainsi qu'une formation au montage vidéo.
+                
+                Au-delà de mon travail sur scène et sur le grand écran, je cultive une passion pour la cuisine, les voyages et l'écriture. Ces passions m'inspirent et enrichissent mon art.
+                
+                Avec mon charme naturel et mon engagement artistique, je suis déterminé à continuer d'explorer de nouvelles formes d'expression artistique et à captiver le public avec des performances mémorables.
+                
+                Rejoignez-moi dans mon voyage artistique, où chaque moment sur scène est une aventure unique et où l'art prend vie d'une manière que seul le théâtre peut offrir.
+                <br>
+                <strong>Luca Baresi</strong></p>
+        </section>
+        <section id="third">
+            <h2>Les Documents</h2>
+            <ul>
+                <li>
+                    MOI : <img src="CV Luca Baresi.png" alt="zizi">
+                </li>
+                <li>
+                    MOI en doublage de MR burns (version italienne) dans l'épisode 7 saison 33 des Simpsons :                     
+                    <video controls>
+                        <source src="Extrait Audio Mr Burns.mp4">
+                      </video>
+                </li>
+                <li>
+
+                    MOI en figurant dans une scène importante de Baby Driver :                     
+                    <video controls>
+                        <source src="Extrait Baby Driver Figurance.mp4">
+                      </video>
+                </li>
+                <li>
+                    MOI une autre fois : <img src="CV_Luca_Baresi2.png">
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const descriptions = ["ACTEUR", "DOUBLEUR", "ARTISTE"];
+        const descriptionElement = document.getElementById("description");
+        let index = 0;
+        let currentIndex = 0;
+        function changeDescription() {
+            const currentText = descriptions[index];
+            if (currentIndex < currentText.length) {
+                descriptionElement.textContent += currentText[currentIndex];
+                currentIndex++;
+                setTimeout(changeDescription, 100); // Change every 100 milliseconds
+            } else {
+                setTimeout(eraseDescription, 1000); // Wait 1 second before erasing
+            }
+        }
+        function eraseDescription() {
+            if (currentIndex > 0) {
+                descriptionElement.textContent = descriptionElement.textContent.slice(0, -1);
+                currentIndex--;
+                setTimeout(eraseDescription, 50); // Erase every 50 milliseconds
+            } else {
+                index = (index + 1) % descriptions.length;
+                setTimeout(changeDescription, 1000); // Wait 1 second before typing the next description
+            }
+        }
+        changeDescription(); // Start the initial change
+    </script>
+</body>
+
+</html>
